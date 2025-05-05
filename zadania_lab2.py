@@ -9,7 +9,7 @@ class Osoba:
 
 class Student(Osoba):
     def __init__(self, imie, nazwisko, wiek, nr_indeksu):
-        super().__init__(self, imie, nazwisko, wiek)
+        super().__init__(imie, nazwisko, wiek) 
         self.numer_indeksu = nr_indeksu
 
     def opisz(self):
@@ -18,7 +18,7 @@ class Student(Osoba):
 
 class Pracownik(Osoba):
     def __init__(self, imie, nazwisko, wiek, stanowisko, pensja):
-        super().__init__(self, imie, nazwisko, wiek)
+        super().__init__(imie, nazwisko, wiek)
         self.stanowisko = stanowisko
         self.pensja = pensja
 
@@ -33,12 +33,17 @@ class PracującyStudent(Student,Pracownik):
         self.godziny_pracy = godziny_pracy
 
     def opisz(self):
-        print((f"Opis pracownika {self.imie} {self.nazwisko}, {self.wiek} lat, numer indeksu:{self.numer_indeksu} ,stanowisko:{self.stanowisko}, wynagrodzenie(pensja):{self.pensja} godziny pracy :{self.godziny_pracy} "))
-    
-ktos4 = Osoba("Piotr", "Kowalski", 25)
-ktos = Student("Piotr", "Kowalski", 25, 123)
-ktos.opisz()
-ktos3 = Pracownik("Piotr", "Kowalski", 25, "mechanik", 5021)
-ktos3.opisz()
-ktos2 = PracującyStudent("Piotr", "Kowalski", 25, 222, "mechanik", 5021, 420)
-ktos2.opisz()
+    #    print((f"Opis pracownika {self.imie} {self.nazwisko}, {self.wiek} lat, numer indeksu:{self.numer_indeksu} ,stanowisko:{self.stanowisko}, wynagrodzenie(pensja):{self.pensja} godziny pracy :{self.godziny_pracy} "))
+        Student.opisz(self)
+        Pracownik.opisz(self)
+
+
+
+
+# ktos2 = PracującyStudent("Piotr", "Kowalski", 25, 222, "mechanik", 5021, 420)
+# ktos2.opisz()
+
+mirek=Student("mirek", "kowalski", 22, 22222)
+mirek.opisz()
+mirek2=Pracownik("mirek", "kowalski", 22, "qweqwe", 24244)
+mirek2.opisz()
